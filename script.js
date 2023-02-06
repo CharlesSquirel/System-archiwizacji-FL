@@ -31,6 +31,7 @@ const renderList = () => {
     const editBtn = appendActions.appendChild(document.createElement("button"));
     const deleteBtn = appendActions.appendChild(document.createElement("button"));
     addClassesBtns(editBtn, deleteBtn);
+    renderBtn.disabled = true;
   });
 };
 
