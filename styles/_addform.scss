@@ -1,0 +1,42 @@
+.add-form {
+  display: flex;
+  gap: 10px;
+}
+.add-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  background: $primary;
+  color: $white;
+  border-radius: 5px;
+}
+
+.btn-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 260px;
+  height: 40px;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.action-box {
+  position: relative;
+}
+
+.plus-icon {
+  color: $white;
+  font-size: 20px;
+}

@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  width: 260px;
+  height: 40px;
+  padding-left: 8px;
+  border-radius: 5px;
+  outline: 0;
+  border: 1px solid #8c2433;
+  font-size: 18px;
+  cursor: pointer;
+}
+input:focus {
+  border: 2px solid green;
+}
+
+label {
+  font-size: 22px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+}
+
+.add-form {
+  display: flex;
+  gap: 10px;
+}
+
+.add-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  background: #8c2433;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 260px;
+  height: 40px;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.action-box {
+  position: relative;
+}
+
+.plus-icon {
+  color: #fff;
+  font-size: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.search {
+  width: 662px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 13px;
+  bottom: 3px;
+  font-size: 26px;
+  pointer-events: none;
+}
+
+main {
+  width: 80%;
+}
+
+tr {
+  border-bottom: 1px solid #8c2433;
+}
+
+.list-container {
+  background-color: #e7e7e7;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.main-verse-container {
+  font-size: 20px;
+  font-weight: 500;
+  height: 36px;
+}
+
+.verse-container {
+  height: 50px;
+  font-size: 18px;
+  border-bottom: 1px solid #8c2433;
+}
+.verse-container th {
+  font-weight: 400;
+}
+
+.btn-edit, .btn-delete {
+  width: 68px;
+  height: 28px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.btn-delete {
+  margin-left: 5px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding-top: 100px;
+}
+
+.add-form-error {
+  color: red;
+  display: none;
+}/*# sourceMappingURL=style.css.map */

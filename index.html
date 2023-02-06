@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System rejestracji materiałów audio-wizualnych Filharmonii Lubelskiej</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://kit.fontawesome.com/aacfed8f05.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="add-container">
+      <form class="add-form">
+        <div class="signature-box input-box">
+          <label for="signature">Sygnatura</label>
+          <input id="signature" type="text" class="signature" placeholder="DA..." autocomplete="off" />
+          <p class="add-form-error">Error message error message</p>
+        </div>
+        <div class="date-box input-box">
+          <label for="date">Data</label>
+          <input type="text" placeholder="01/01/2023" id="date" class="date" autocomplete="off" />
+          <p class="add-form-error">Error message error message</p>
+        </div>
+        <div class="description-box input-box">
+          <label for="description">Opis</label>
+          <input type="text" class="description" id="description" placeholder="Opis..." autocomplete="off" />
+          <p class="add-form-error">Error message error message</p>
+        </div>
+        <div class="tags-box input-box">
+          <label for="tags">Tagi</label>
+          <input type="text" id="tags" class="tags" placeholder="koncert symfoniczny, Mozart,..." autocomplete="off" />
+          <p class="add-form-error">Error message error message</p>
+        </div>
+        <div class="action-box input-box">
+          <label for="btn-add">Akcje</label>
+          <button id="btn-add " class="btn btn-add">Dodaj<i class="fa-solid fa-plus plus-icon"></i></button>
+        </div>
+      </form>
+    </header>
+    <section class="search-container">
+      <label for="search">Wyszukaj</label>
+      <input type="text" id="search" class="search" autocomplete="off" />
+      <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+      
+    </section>
+    <button class="btn btn-delete btn-render">Render</button>
+    <main>
+      <table class="list-container">
+        <tr class="main-verse-container">
+          <th>Sygnatura</th>
+          <th>Data</th>
+          <th>Opis</th>
+          <th>Tagi</th>
+          <th>Akcje</th>
+        </tr>
+        <!-- <tr class="verse-container">
+          <td>DAsdsdsdsdsd</td>
+          <td>01.01.2023</td>
+          <td>Koncert symfoniczny</td>
+          <td>Wijatkowski, Mozart</td>
+          <td><button class="btn btn-edit">Edytuj</button> <button class="btn btn-delete">Usuń</button></td>
+        </tr>
+        <tr class="verse-container">
+          <td>DAsdsdsdsdsd</td>
+          <td>01.01.2023</td>
+          <td>Koncert symfoniczny</td>
+          <td>Wijatkowski, Mozart</td>
+          <td><button class="btn btn-edit">Edytuj</button> <button class="btn btn-delete">Usuń</button></td>
+        </tr>
+        <tr class="verse-container">
+          <td>DAsdsdsdsdsd</td>
+          <td>01.01.2023</td>
+          <td>Koncert symfoniczny</td>
+          <td>Wijatkowski, Mozart</td>
+          <td><button class="btn btn-edit">Edytuj</button> <button class="btn btn-delete">Usuń</button></td>
+        </tr>
+        <tr class="verse-container">
+          <td>DAsdsdsdsdsd</td>
+          <td>01.01.2023</td>
+          <td>Koncert symfoniczny</td>
+          <td>Wijatkowski, Mozart</td>
+          <td><button class="btn btn-edit">Edytuj</button> <button class="btn btn-delete">Usuń</button></td>
+        </tr> -->
+      </table>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

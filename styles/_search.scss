@@ -1,0 +1,19 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.search {
+    width: 662px;
+    
+}
+
+.search-icon {
+    position: absolute;
+    right: 13px;
+    bottom: 3px;
+    font-size: 26px;
+    pointer-events: none;
+}
