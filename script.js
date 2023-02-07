@@ -55,13 +55,7 @@ addFormInputs.forEach((input) => {
   });
 });
 
-// C) OKIENKO POMYŚLNEGO DODANIA DO BAZY
-addBtn.addEventListener("click", () => {
-  isSubmittedMessage.style.opacity = "1";
-  setTimeout(() => {
-    isSubmittedMessage.style.opacity = "0";
-  }, 10000);
-});
+
 
 // 2. RENDEROWANIE LISTY Z FILES
 // A) dynamiczne dodawanie klas i tekstu do buttonów
@@ -108,3 +102,39 @@ const renderList = () => {
 
 // D) OBSŁUGA PRZYCISKU RENDEROWANIA
 renderBtn.addEventListener("click", renderList);
+
+// 3. OBSŁUGA PRZYCISKU DODAJ
+// A) Resetowanie inputów po dodaniu
+const resetAddForm = () => {
+  addFormInputs.forEach(input => {
+    input.value = ""
+  })
+}
+
+// B)Renderowanie dodatkowego elementu
+const renderAddedElement = (file) => {
+  const appendRow = table.appendChild(document.createElement("tr"));
+  appendRow.classList.add("verse-container")
+  for (let property in file) {
+    appendRow.appendChild(document.createElement("td")).textContent = file[property];
+  }
+  const appendActions = appendRow.appendChild(document.createElement("td"));
+  const editBtn = appendActions.appendChild(document.createElement("button"));
+  const deleteBtn = appendActions.appendChild(document.createElement("button"));
+  addClassesBtns(editBtn, deleteBtn);
+  deleteBtns = document.querySelectorAll(".btn-delete");
+  setDeleteBtns();
+}
+
+// C) Obsługa przycisku dodaj
+addBtn.addEventListener("click", () => {
+  isSubmittedMessage.style.opacity = "1";
+  setTimeout(() => {
+    isSubmittedMessage.style.opacity = "0";
+  }, 10000);
+  const newFile = {signature: signatureInput.value, date: dateInput.value, description: descriptionInput.value, tags: tagsInput.value};
+  files.push(newFile);
+  resetAddForm();
+  console.log(files)
+  renderAddedElement(newFile);
+});
