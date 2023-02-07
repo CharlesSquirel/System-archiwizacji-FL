@@ -13,7 +13,7 @@ body {
     padding-top: 100px;
 }
 
-.add-form-error {
+.error-signature, .error-date, .error-description, .error-tags {
     color: red;
     display: none;
 }
