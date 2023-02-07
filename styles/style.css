@@ -147,7 +147,20 @@ body {
   padding-top: 100px;
 }
 
-.add-form-error {
+.error-signature, .error-date, .error-description, .error-tags {
   color: red;
   display: none;
+}
+
+.submitted-message-box {
+  width: 243px;
+  height: 37px;
+  background-color: green;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0.9;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
 }/*# sourceMappingURL=style.css.map */
