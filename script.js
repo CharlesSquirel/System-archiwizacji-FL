@@ -64,15 +64,14 @@ const addClassesBtns = (btn1, btn2) => {
   });
 };
 
-// główna funkcja renderująca
+// główna funkcja renderująca listę
 const renderList = () => {
   files.map((file) => {
     const appendRow = list.appendChild(document.createElement("tr"));
     appendRow.classList.add("verse-container");
-    appendRow.appendChild(document.createElement("td")).textContent = file.signature;
-    appendRow.appendChild(document.createElement("td")).textContent = file.date;
-    appendRow.appendChild(document.createElement("td")).textContent = file.description;
-    appendRow.appendChild(document.createElement("td")).textContent = file.tags;
+    for (let property in file) {
+      appendRow.appendChild(document.createElement("td")).textContent = file[property];
+    }
     const appendActions = appendRow.appendChild(document.createElement("td"));
     const editBtn = appendActions.appendChild(document.createElement("button"));
     const deleteBtn = appendActions.appendChild(document.createElement("button"));
