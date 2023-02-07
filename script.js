@@ -1,14 +1,15 @@
+// BAZA DANYCH
 const files = [
   { signature: "DAsadasdad", date: "01.01.2023", description: "Koncert symfoniczny", tags: "koncert symfoniczny, Mozart" },
-  { signature: "DAsadasdad", date: "01.01.2023", description: "Koncert symfoniczny", tags: "koncert symfoniczny, Mozart" },
-  { signature: "DAsadasdad", date: "01.01.2023", description: "Koncert symfoniczny", tags: "koncert symfoniczny, Mozart" },
-  { signature: "DAsadasdad", date: "01.01.2023", description: "Koncert symfoniczny", tags: "koncert symfoniczny, Mozart" },
+  { signature: "sadasdasd", date: "02.01.2023", description: "Koncert kameralny", tags: "koncert symfoniczny, Mozart" },
+  { signature: "asdasdasd", date: "03.01.2023", description: "Recital fortepianowy", tags: "koncert symfoniczny, Mozart" },
+  { signature: "asdasdasd", date: "04.01.2023", description: "Koncert symfoniczny", tags: "koncert symfoniczny, Mozart" },
 ];
+
+// DOM
 
 const list = document.querySelector(".list-container");
 const renderBtn = document.querySelector(".btn-render");
-
-// WALIDACJA
 const addBtn = document.querySelector(".btn-add");
 const signatureInput = document.querySelector(".signature");
 const errorSignature = document.querySelector(".error-signature");
@@ -20,17 +21,20 @@ const tagsInput = document.querySelector(".tags");
 const errorTags = document.querySelector(".error-tags");
 const addFormInputs = document.querySelectorAll(".add-form input");
 const isSubmittedMessage = document.querySelector(".submitted-message-box");
+const table = document.querySelector(".list-container");
+let deleteBtns = document.querySelectorAll(".btn-delete");
 
+// 1. WALIDACJA
 addBtn.disabled = true;
 
-// Warunkowe odblokowanie przycisku dodaj
+// A) Warunkowe odblokowanie przycisku dodaj
 const checkReady = () => {
   addFormInputs.forEach((input) => {
     let errorMessage = input.nextElementSibling;
     addBtn.disabled = input.value.length > 0 && errorMessage.style.display === "none" ? false : true;
   });
 };
-// puste pola
+// B) puste pola
 addFormInputs.forEach((input) => {
   input.addEventListener("blur", () => {
     let errorMessage = input.nextElementSibling;
@@ -51,15 +55,16 @@ addFormInputs.forEach((input) => {
   });
 });
 
+// C) OKIENKO POMYŚLNEGO DODANIA DO BAZY
 addBtn.addEventListener("click", () => {
   isSubmittedMessage.style.opacity = "1";
   setTimeout(() => {
     isSubmittedMessage.style.opacity = "0";
-  }, 10000)
+  }, 10000);
 });
 
-// RENDEROWANIE LISTY Z FILES
-// dynamiczne dodawanie klas i tekstu do buttonów
+// 2. RENDEROWANIE LISTY Z FILES
+// A) dynamiczne dodawanie klas i tekstu do buttonów
 const addClassesBtns = (btn1, btn2) => {
   [btn1, btn2].forEach((btn) => {
     btn.textContent = btn === btn1 ? "Edytuj" : "Usuń";
@@ -68,7 +73,22 @@ const addClassesBtns = (btn1, btn2) => {
   });
 };
 
-// główna funkcja renderująca listę
+// B) Usuwanie wpisów przycik usuń
+function setDeleteBtns() {
+  deleteBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let currentBtn = e.target;
+      if (currentBtn) {
+        const parentToRemove = document.querySelectorAll(".verse-container");
+        parentToRemove.forEach((element) => {
+          element.contains(btn) ? table.removeChild(element) : element;
+        });
+      }
+    });
+  });
+}
+
+// C) główna funkcja renderująca listę
 const renderList = () => {
   files.map((file) => {
     const appendRow = list.appendChild(document.createElement("tr"));
@@ -81,7 +101,10 @@ const renderList = () => {
     const deleteBtn = appendActions.appendChild(document.createElement("button"));
     addClassesBtns(editBtn, deleteBtn);
     renderBtn.disabled = true;
+    deleteBtns = document.querySelectorAll(".btn-delete");
+    setDeleteBtns();
   });
 };
 
+// D) OBSŁUGA PRZYCISKU RENDEROWANIA
 renderBtn.addEventListener("click", renderList);
